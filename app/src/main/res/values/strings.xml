@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Find Unfollowers App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_unf_list">UnfListActivity</string>
+    <string name="title_activity_follow_back">FollowBackActivity</string>
+    <string name="banner_ad_unit_id">ca-app-pub-4443948134096736/8698367203</string>
+    <string name="app_header">Unfollowers App</string>
+    <string name="followers">Followers </string>
+    <string name="following">Following </string>
+    <string name="unfollowers">Unfollowers </string>
+    <string name="unfollowing">Unfollowing </string>
+    <string name="login">Login</string>
+    <string name="show_unfollowers">Show Unfollowers</string>
+    <string name="show_unfollowing">Show Unfolowing</string>
+    <string name="follow_back_header">People Follows You and You Not Follow</string>
+    <string name="more">More</string>
+    <string name="unf_header">People You Follow But Not Follow You</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="warning">Warning</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="shoult_login">You Should login Before</string>
+    <string name="no_unfollowers">You have no unfollowers</string>
+    <string name="no_following">You have no  any unfollowing users</string>
+    <string name="logout">Logout</string>
+    <string name="loading">loading...</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="mention_followers">Mention followers</string>
+    <string name="mention_following">Mention Following</string>
+    <string name="mention_users">Mention Users</string>
+    <string name="send_mention">Send Mention</string>
+    <string name="enter_text">Please enter text before mention</string>
+    <string name="short_of_140">Please enter a short text of 140 characters</string>
+    <string name="title_activity_make_mention">MakeMentionActivity</string>
+    <string name="title_activity_make_hash_tag_tweet">MakeHashTagTweetActivity</string>
+    <string name="quick_tweet">Quick Tweet</string>
+    <string name="clear_tweet">Clear Tweet</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="title_activity_clear_tweet">ClearTweetActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="search">Search and follow</string>
+    <string name="title_activity_search_mention">SearchMentionActivity</string>
+    <string name="search_mention">search mention</string>
+    <string name="title_activity_direct_message">DirectMessageActivity</string>
+    <string name="Delete">delete</string>
+    <string name="mention_hint">Write text for mention</string>
+    <string name="enter_hashtah_for_users">Enter hash tag for take users</string>
+    <string name="enter_hash_for_mentioned_users">Enter hashtag for mentioned users</string>
+    <string name="add">Add</string>
+    <string name="search_and_mention">Search And Mention</string>
+    <string name="clear_Seperatealy">Clear one by one</string>
+    <string name="clear_all">Clear All</string>
+    <string name="limit_asim"> limit exceeded you have to wait for a while .</string>
+    <string name="title_activity_select_country">SelectCountry</string>
+    <string name="sleect_country">Select your country for trending topics</string>
+    <string name="check_internet_connection">please check your internet connection</string>
+    <string-array name="hashtag_list">
+
+        <!--<item>#edebiyat</item>-->
+        <!--<item>#kitap</item>-->
+        <!--<item>#şiir</item>-->
+        <!--<item>#şiirsokakta</item>-->
+        <!--<item>cemal süreya</item>-->
+        <!--<item> cahit zarifoğlu</item>-->
+        <!--<item>erdem bayazıt</item>-->
+        <!--<item>didem madak</item>-->
+        <!--<item>behcet necaatigil</item>-->
+        <!--<item>özdemir asaf</item>-->
+        <!--<item>şair nigar</item>-->
+        <!--<item>necip fazıl kürek</item>-->
+        <!--<item>asaf halet çelebi</item>-->
+        <!--<item>can dündar</item>-->
+        <!--<item>can yücel</item>-->
+        <!--<item>nazım hikmet</item>-->
+        <!--<item>turgut uyar</item>-->
+        <!--<item>necip fazıl</item>-->
+        <!--<item>birhan keskin</item>-->
+        <!--<item>kahraman tazeoğlu</item>-->
+        <!--<item>ibrahim tenekeci</item>-->
+        <!--<item>elif şafak</item>-->
+        <!--<item>orhan pamuk</item>-->
+        <!--<item>kemal sayar</item>-->
+        <item>#takibetakip</item>
+        <item>#gt</item>
+        <item>#fb</item>
+        <item>#tfb</item>
+        <item>#teamfollowback</item>
+        <item>#takipedentakipedilir</item>
+        <item>#F4F</item>
+        <item>#anındageritakip</item>
+        <item>#mgwv</item>
+        <item>#followtrick</item>
+        <item>#followback</item>
+        <item>#likeforfollow</item>
+        <item>#rtfb</item>
+        <item>follow all who rt</item>
+
+        <item>#geritakip</item>
+        <item>#takip</item>
+        <item>#takipedenitakipederim</item>
+        <item>#takipedenitakipederimm</item>
+    </string-array>
+    <string-array name="sentence_list">
+        <item>"İnsanın sevdiği bir ev olunca, kendisine mahsus bir hayatı da olur."\n\n-Ahmet Hamdi Tanpınar</item>
+        <item>"Biliyor musun az az yaşıyorsun içimde
+Oysaki seninle güzel olmak var " #yerçekimsizkaranfil #edipcansever</item>
+        <item>"Örneğin rakı içiyoruz, içimize bir karanfil düşüyor gibi
+Bir ağaç işliyor tıkır tıkır yanımızda
+Midemdi aklımdı şu kadarcık kalıyor"</item>
+        <item>"Sen o karanfile eğilimlisin, alıp sana veriyorum işte
+Sen de bir başkasına  veriyorsun daha güzel " #yerçekimsizkaranfil #edipcansever</item>
+        <item>"O başkası yok mu bir yanındakine veriyor
+Derken karanfil elden ele."  #yerçekimsizkaranfil #edipcansever</item>
+        <item>"Görüyorsun ya bir sevdayı büyütüyoruz seninle
+Sana değiniyorum, sana ısınıyorum, bu o değil "
+#yerçekimsizkaranfil #edipcansever</item>
+        <item>"Bak nasıl, beyaza keser gibisine yedi renk
+Birleşiyoruz sessizce. " #yerçekimsizkaranfil #edipcansever</item>
+        <item>“neyin var?”dedn.“Her şeym var benm,hariçsn sen” dedm.“Ah!” dedn “Ben geldm sana,al beni,eyle beni seversn bugün,yarn dünlern hatrına belki”</item>
+<item>“Nasıl, gelmeyeceğini bildiğini beklemen “bilgelik sevgisi" idiyse,
+geleceğini bildiğini beklemen de, sevginin kendisidir.”
+— Oruç Aruoba</item>
+        <item>“Her zaman söylediğim gibi sen, kirinle, pasınla güzelsin. Saklanmadığın için güzelsin. Süslenmediğin için güzelsin.”
+—  Cemil Meriç</item>
+        <item>"Bir şey söyle\n
+Sözü aşsın öze değsin.\n
+Bir şey söyle,\n
+Yanındayım mesela"\n\n
+
+-Turgut Uyar</item>
+        <item>her kimsen ellerimi üzerine kapatıyorum.
+böylece benim şiirim oluyorsun.”
+— Walt Whitman</item>
+        <item>“elleri birbirine değdiğinde, yeryüzünde bir bütünün birbirinden uzak ne kadar parçası varsa, onlar da birbirine değdiler.”
+— Mine Söğüt</item>
+        <item>Kırık pirinç, kırık yumurta…\n
+Semt pazarından ucuza.\n
+Kalbin kırığından söz etmeye.\n
+Sıra bile gelmiyordu.”\n
+— Didem Madak</item>
+        <item>
+            “Beni anladın. Zaten en dayanılmaz acı buydu. Sen beni anladın. Anladığın halde canımı yaktın Diego.”\n
+ - Frida Kahlo
+        </item>
+        <item>“Bahara bir dilim mavi var.\n
+Son çeyrek biraz hüzünlü olur,\n
+Olsun.Tersine akan trenlere,raylarında\n
+Çok umuttan gemi yüzdürdüm ben.”\n
+— T.U</item>
+        <item>“Alnımda karakalem bir gelecek resmi\n
+Ağzım kanatları kesik şarkılar”\n
+— Şükrü Erbaş</item>
+        <item>"Neden yazılır bir şiir,\n
+Neden okunur bunca yazı,\n
+Çünkü nasıl alışabilir başkaca,\n
+İnsanın karmaşıklığı."\n
+- Edip Cansever</item>
+        <item>"Adın ne idi unuttum,\n
+Yüzün silindi belleğimden.\n
+Ama ellerin;\n
+Bir su gibi akışkan\n
+Ezberimdedir hala."\n
+- Metin Altıok</item>
+        <item>"Halimi anlatacak sözler yazamam artık\n
+Bu kavruk mektuba.\n
+Rüzgârdan yan yatmış otlar koydum\n
+Gerisini sen anla.."\n
+Birhan Keskin</item>
+        <item>“Biliyoruz ki, bazı sesler, bazı sahneler, bazı renkler ya da bazı cümleler insanın aklına mıh gibi çakılıp kalıyor." \n
+
+ Hasan Ali Toptaş</item>
+        <item>“Kadın karar verene, erkek anlayana dek ömür bitiyor.”
+—  Ruhi Mücerret, Murat Menteş</item>
+        <item>"ve işgalim,\n
+eşkalim,\n
+sevgilim..\n
+Keşke diyorum bazen,\n
+yaşam senden ibaret olsaydı.."\n\n
+
+-Zal Barlin</item>
+        <item>"Seninle olmak hayatımın özrüdür ama
+Aşk bir cephe açamıyor kendine. "
+
+-Veysel Çolak</item>
+        <item>"Dünyanın insandan başka anlamı yoktur. Hayat anlayışımızı kurtarmak istiyorsak, insanı kurtarmamız gerekir. "
+
+-Albert Camus</item>
+        <item>"sonra her şey geçmedi\n
+sonra her şey geçmez kolayca.\n
+herkes kalanıyla yaşar\n
+kendinden geriye ne bıraktıysa. "\n
+
+-Haydar Ergülen</item>
+        <item>"Uzun kanatlı kuş sürüleri diliyorum sana,\n
+Ve severken seni,\n
+Sevdikçe seni,\n
+Hep çocuk kalacağım, biliyorum." #edebiyat \n
+
+-Akgün Akova</item>
+        <item>"senin geçmişin uzun, elini hemen elime ver geç kalma\n
+çoktan beri beklediğin o diri gülümseyiş işte bendim."\n
+
+-Turgut Uyar</item>
+        <item>
+
+            "Mutlu an biraz uzun olmasın\n
+Yoksulluk gibi gideceğim bir yer var\n
+Efkarın aşılmaz yalnızlığın kaçınılmaz olduğu.."\n
+
+-Cahit Zarifoğlu
+        </item>
+        <item>
+            "Bu akşam anladım ki, bir insan diğer bir insana bazen hayata bağlandığından çok daha kuvvetli bağlarla sarılabilirmiş"
+-Sabahattin Ali
+        </item>
+        <item>
+            "Bence sevgilim,
+Söylendikçe bizim olan bir şarkıdır aşk.
+Dikey bir şiirdir bütün kuşları aynı anda
+Havalandıran. "
+
+-Akgün Akov
+        </item>
+        <item>
+            "sardunyalara su vermekle unutamadığımz\n
+şeymiş aşk:\n
+alnından bir günaydın gibi düşürdüğm sabah,\n
+sağ yanımda unuttuğn keder.”\n
+Birhan Keskin
+        </item>
+        <item>"Alnımda karakalem bir gelecek resmi
+Ağzım kanatları kesik şarkılar .."
+
+-Şükrü Erbaş</item>
+        <item>
+            "Ve belki de sen kitapları okuyarak, yaşadığına inanıyorsun! "\n
+
+-Giovanni Papini
+        </item>
+        <item>
+            "bana düşen anılr bahçesinde hüzünlenerk dolaşmaktr\n
+ve ölmekte olan bir sesn bana hüzünle\n
+”ellerini seviyorm” demesidir"\n
+-furuğ ferruhzad
+        </item>
+        <item>"güneşi özledim, sonra seni\n
+keşke gölgesine razı bir fesleğen olaydım."\n
+
+-didem madak</item>
+        <item>
+            "bana çiçek gönderme\n
+bir kus ağacı gönder \n
+alnıma dokunanlar \n
+iyileşmiş desinler”\n
+
+-Ülkü Tamer
+        </item>
+        <item>
+            "Bedenini bir dünya haritası gibi dizlerime\n
+Serip de yollar aradım yürümek için.."\n
+
+-Ahmet Erhan
+
+        </item>
+        <item>
+            "Nedir sesindeki öylesi bir hüzünle\n
+Kuşun feryat figanı\n
+Der ki,körpeyim daha.\n
+Özlemini çektiğm ne"\n
+– Sylvia Plath
+        </item>
+        <item>"Hiçbir sebep yokken, ona gelişi güzel içimi dökmeye başladım."
+-Cahit Zarifoğlu</item>
+        <item>"Sen aklıma gelince her şey gülümserdi."
+
+-Sabahattin Ali</item>
+        <item>"Bir gün sana gene yollarda rastlasam,
+Birlikte kır kahvelerine gitsek,
+Konuşmasak."
+
+-Cevat Çapan</item>
+        <item>
+            "İnsan bir düşü sevebilir mi?” diye sordu. “Evet” dedim hiç düşünmeden, “Bence zaten en çok onu sevebilir, bir düşü..."
+
+-Kürşat Başar
+        </item>
+        <item>
+            "Bazen bir söz yoktur.
+O gün ne olduğunu özetleyecek zekice bir alıntı yoktur.
+Bazen gün.
+Sadece.
+Biter."
+
+-Tezer Özlü
+        </item>
+        <item>
+
+            " bir gece başımızı alıp gitsek diyorum
+bir deniz kenarı mı olur
+bir dağ başı mı olur
+kaçsak bu kalabalıktan"
+
+-Ümit Yaşar Oğuzcan
+        </item>
+        <item>
+"Şiirlerin içinden çıkıp gelen kadınlar vardır
+Öpse şiir, saçını dağıtsa mısra, gülse kıta olur."
+
+-Didem Madak
+
+        </item>
+        <item>
+
+            Çünkü serçe telaşıyla yaşayan kadınlar,
+zamanın ağırlığıyla uçabilen büyük kanatlı adamları seçerler…
+
+-Ece Temelkuran
+        </item>
+        <item>
+
+            Bir kadının kaderi; sevdiği adamın ihanetiyle, sevmediği adamın sadakati arasında çizilir.
+
+-Lev Tolstoy
+        </item>
+        <item>
+
+            Geç olmadan, sonsuz geceye girmeden herkes döktüğü kederi toplasa?
+
+-Gülten Akın
+        </item>
+        <item>
+Hayat devam eder. Bazı çiçekler susuzluğa ve unutulmaya dayanır. Hayat her zaman devam eder, bunu herkes bilir.
+
+-Barış Bıçakçı
+
+        </item>
+        <item>
+Geri gelmemek üzere giden bir şeyin
+Kanat sesleri kalacak yalnız kulaklarında
+
+-Lale Müldür
+
+        </item>
+        <item>
+            Ne mutlu kalbine sen düşene…
+Ne mutlu senin kalbine düşene…
+
+-Nazan Bekiroğlu
+        </item>
+        <item>
+
+            Gelip acı sözlerin için, Bir çekmece koydun yaralarımıza.
+
+-Cahit Zarifoğlu
+        </item>
+        <item>
+
+            Bir gün sadece seni öpmeyi unuttuğum için geri döneceğim. Sana devrim için söylenmiş en güzel şarkıları söylemek için.
+
+-Umay Umay
+        </item>
+        <item>
+
+            koşullar ağırdı ve ben seni o zamanlarda da seviyordum."
+
+-Cahit Zarifoğlu
+        </item>
+        <item>
+Dünya ne ise oydu, ben de ne isem o oldum, uyuşamadık. Hepsi bu.
+
+-Oruç Aruoba
+
+        </item>
+        <item>
+"Birisine anlatmak da ucuzlatıyor ya işi,
+ne bekliyorsun karşındakinden, o acıyı gidermesini mi?
+En iyisi susmak "
+
+- Leyla Erbil
+
+        </item>
+        <item>
+
+            Seni sevince kıpırdayan her şiiri
+Kahverengi bir çaydanlıkta saklıyorum.
+
+-Didem Madak
+        </item>
+
+        <item>
+
+            "Hiç gelçmeyen, hiç unutulmayan şeyler de var, beyefendi! Ölünceye kadar insanın sırtından atamayacağı şeyler de var. "
+
+-Sabahattin Ali
+        </item>
+
+        <item>
+
+            "Ben sizi nasıl da ağır,nazlı ve dur bakalım sevdiydim.
+Ben sizi sahrada yağmurları bekler gibi beklemedi miydim."
+
+-Birhan Keskin
+        </item>
+
+        <item>
+
+            "dinmek ne yok olmak
+ne de susmak kaygılı
+yeni yolculuklar için azık toplamak
+bir limanda ya da bir dağ kahvesinde.."
+
+-Gülten Akın
+        </item>
+
+        <item>
+
+            "Sesinde ne var biliyor musn
+Bir bahçenin ortası var
+    Mavi ipek kış çiçeği
+    Sigara içmek için
+    Üst kata çıkıyorsun"
+-Cemal Süreya
+        </item>
+
+        <item>
+            "Sesinde ne var biliyor musn
+Söylemediğn sözcüklr var
+    Küçück şeylr belki
+    Ama günn bu saatinde
+    Anıt gibi dururlr"
+-Cemal Süreya
+        </item>
+
+        <item>
+
+            "Sesinde ne var biliyor musun
+Söyleyemediğin sözcükler var"
+
+-Cemal Süreya
+        </item>
+
+        <item>
+
+            "Yârin dudağından getirilmiş
+Bir katre âlevdir bu karanfil,
+Rûhum acısından bunu bildi!"
+
+-Ahmet Haşim
+        </item>
+        <item>
+
+            "Yazarken dünyayı bir anlığına değiştirebilirken, geçmişinizi bir santim yerinden oynatamıyorsunuz."
+
+-Tomris Uyar
+        </item>
+
+        <item>
+
+            "Sığındınız liman; erkekler yerine, anneniz olmaya başladıysa, derinlerden bir yerlerden kırılmışsınız demektir."
+        </item>
+        <item>
+
+            "Yazdıklarım seninle ilgiliydi, orada senin göğsünde yakınamadıklarımdan yakınıyordum yalnızca ! "
+
+-Franz Kafka
+        </item>
+        <item>
+
+            "Sen benim sevgilimsin, sevsen de sevmesen de;
+Aradığım yerlere benzeyiş buldum sende. "
+
+-Sabahattin Al
+        </item>
+        <item>
+            "İnsan ya hayrandır sana, ya düşman. ya hiç yokmuşsun gibi unutulursun ya bir dakka bile çıkmazsın akıldan."
+
+-Nazım Hikmet Ran
+        </item>
+        <item>
+
+            Bir temel ilkedn yola çıkmak gerekirse,bu temel ilke anck şu olabilir:Kendini çözemeyn kişi,kendi dışında hiçbir sorunu çözemez
+Oğuz Atay
+        </item>
+        <item>
+          "Ne söylesem tarifin eksik kalıyor
+Oysa; kalbi acıtan her ne varsa
+Sen hepsinden birazsın işte.."
+
+-Ah Muhsin Ünlü
+        </item>
+        <item>
+
+            "Aşk en büyük politikadır."
+
+ #Kayahan
+        </item>
+        <item>
+
+            "Seni seviyorum'dan daha özel bir cümle de var: Sana güveniyorum.Çünkü herkes herkesi sevebiliyor;ama herkese güvenmiyor."
+
+-Cemal Süreya
+        </item>
+
+        <item>
+
+            "Yüzünü avuçlarımın arasına alabilmek. Bilirsin, bu öyle sıradan bir eylem değil."
+
+-Cemal Süreya
+        </item>
+
+        <item>
+
+            Ne söylesem tarifin eksik kalıyor
+Oysa; kalbi acıtan her ne varsa
+Sen hepsinden birazsın işte..
+
+-Ah Muhsin Ünlü
+        </item>
+
+        <item>
+
+            " Birbirinden uzak kalmak, birlikte olmanın yalnızca başka bir çeşididir."
+
+-Jean Paul Sartre
+        </item>
+        <item>
+            "İki kent arasındayım; biri bilmiyor beni, öteki artık tanımıyor."
+
+-Jean-Paul Sartre
+        </item>
+
+        <item>
+            "Sahiplenme duygumuz olmasa, çok daha mutlu insanlar olabilirdik."
+
+-Burak Aksak
+        </item>
+        <item>
+            "Gel başını göğsüme yasla da şu hayatın kahrını çilesini çektiğimize değsin. "
+
+-Burak Aksak
+        </item>
+        <item>
+
+            Başlamadan biten ilişkilerimiz,üşüyen ayaklarımız ve bir de durmadan yağan sahipsiz yağmurlar var.Bahar geliyor olmalı,evet.
+-Burak Aksak
+        </item>
+        <item>
+İlle gerek mi özlediğimi söylemek
+Ya da sevdiğimi seni
+Hem gelecek günlere bıraktım seninle olmayı
+Seninle ölmeyi bir güzel
+Seninle
+-C.Z
+
+        </item>
+        <item>
+            "Ne ikna edici bir intihar biçimidir;
+Şimdi seninle göz göze gelmek.. "
+
+-Cemal Süreya
+        </item>
+
+             <item>
+“Bu karlı kış gününde.
+Güngörmüş dağlara karşı
+Sımsıcak öpüşürdük sarılıp birbirimize.
+-Sevgilim, yanımda olsaydın keşke!”
+— Metin Altıok
+        </item>
+            <item>
+“konuşma, konuşmak istemezsen
+ben konuşurum tavanda koşuşan ışıklarla
+hep aynı şeyi söylerim.
+‘beni anla.’”
+— didem madak
+        </item>
+            <item>
+“neyin var?” dedin. “Her şeyim var benim, hariçsin sen” dedim. “Ah!” dedin “Ben geldim sana, al beni, eyle beni seversin bugün, yarın dünlerin hatrına belki”
+        </item>
+            <item>
+“Nasıl, gelmeyeceğini bildiğini beklemen “bilgelik sevgisi" idiyse,
+geleceğini bildiğini beklemen de, sevginin kendisidir.”
+— Oruç Aruoba, Tümceler
+        </item>
+            <item>
+yalın ayak koşan bir çocuğun yüreğiyle gel, sarıl bana
+        </item>
+            <item>
+“Benim içimdeki öyle bir dünya idi ki, ondaki bilinmezlikleri bir bir anlamaya kendimi adeta mecbur hissediyordum.”
+                —  Sadık Hidâyet, Kör Baykuş
+        </item>
+            <item>
+Kıskançlık zorlu bir diş ağrısı gibidir. İnsan kıskançlık duyduğu zaman bir şey yapamaz, oturamaz bile. Ancak gidip gelebilir. Bir noktadan öbürüne.
+
+
+
+- Milan Kundera
+
+        </item>
+            <item>
+Bir şey söyle
+Sözü aşsın öze değsin.
+Bir şey söyle,
+Yanındayım mesela
+
+Turgut Uyar
+        </item>
+            <item>
+yaşlı doğuda her şey mümkündür diyorlar:
+
+sonsuz sevgi, sonsuz bağlılık
+ani ışık, ani ayrılık.
+
+Birhan Keskin
+        </item>
+            <item>
+“Alnımda karakalem bir gelecek resmi
+Ağzım kanatları kesik şarkılar”
+— Şükrü Erbaş, Pervane
+        </item>
+
+                   <item>
+“Gün bitti. Saat kaç. Bitecek mi bir gün savaşımız
+Hakedilmiş hüzünlerimiz olacak mı bizim de”
+— Edip Cansever
+        </item>
+
+                     <item>
+“Ve belki de sen kitapları okuyarak, yaşadığına inanıyorsun!”
+— Giovanni Papini , Düşsel Konçerto
+        </item>
+
+                     <item>
+
+“Doğrudur, içimde gömülü olan bazı şeyleri o gece, ona söylerken keşfettim.”
+— Doğu’nun Limanları, Amin Maalouf
+        </item>
+                     <item>
+
+
+                         “Biliyoruz ki, bazı sesler, bazı sahneler, bazı renkler ya da bazı cümleler insanın aklına mıh gibi çakılıp kalıyor."
+
+ Hasan Ali Toptaş, Harfler ve Notalar
+
+        </item>
+                     <item>
+“Hadi ben kırıldım, toparlamak gelmedi mi aklına?”
+— Ah Muhsin Ünlü
+        </item>
+                     <item>
+“
+Etrafına bakınma.
+Ayakkabılarını bağla.
+Köpekleri kovala.
+Balıkları denize at.
+Kandilleri söndür!
+
+
+Daha zor günler geliyor.
+
+”
+— Ingeborg Bachmann
+        </item>
+                     <item>
+“Bu akşam anladım ki, bir insan diğer bir insana bazen hayata bağlandığından çok daha kuvvetli bağlarla sarılabilirmiş.”
+
+  - Sabahattin Ali
+        </item>
+                     <item>
+“Seninle olmak hayatımın özrüdür ama
+Aşk bir cephe açamıyor kendine.”
+— Veysel Çolak
+        </item>
+                     <item>
+                         “Her şey olması gerektiği gibi:
+Üzüntülü ve ağır ..”
+— Franz Kafka
+
+        </item>
+                     <item>
+“Yazmak iyidir, ama düşünmek daha iyi; akıllılık iyidir, ama sabretmek daha iyi.”
+— Siddhartha, Hermann Hesse
+        </item>
+                     <item>
+“sonbaharda bir yol gibi: temiz, pak süpürüyorsun, sonra yol bir kez daha kurumuş yapraklarla örtülüyor.”
+— Franz Kafka
+        </item>
+                     <item>
+“Mektubun gecikti gene.
+belki de ne yazacağını kestiremiyorsun!
+Oysa adını yazman yeter.
+Görünce içim aydınlanıyor.”
+— Ahmed Arif
+        </item>
+                     <item>
+“Eski bir saçakta kuşlarla
+Yele yağmura karşı oturdum
+İç içe daireler çiziyor
+İçine adını yazıyorum.”
+— Gülten Akın
+        </item>
+                     <item>
+“Seni yatıracağım ellerimde,
+bir ıhlamur yaprağı gibi.
+Seni yatıracağım göğüslerimde,
+menekşeler gibi..”
+— Lale Müldür
+        </item>
+                     <item>
+“Bizi biz yapan hep kusurlarımız, iyi niteliklerimiz değil.”
+— Jose Saramago, Filin Yolculuğu
+        </item>
+                     <item>
+“Sen güzel,
+Ben garip,
+Dünya yaşanası.”
+— Ahmed Arif
+        </item>
+                     <item>
+“Ve insan kadın olunca
+Her şeyi unutur,
+Yüreğinin içindekinden başka.”
+— Lale Müldür
+        </item>
+                     <item>
+“Kalbe dokunmasını biliyorlar, ama kırarak…”
+— Furuğ Ferruhzad
+        </item>
+                     <item>
+“İnsan olan yerlerim çok ağrıyor
+Olsun, yine de sen kapanma, bu sıra benim
+Yerine bırak ben incineyim.”
+
+
+Birhan Keskin
+        </item>
+                     <item>
+“Dünyada büyük fırtınaların koptuğu böyle günlerde, ben onsuz edemem.”
+— O ve Ben, Sait Faik Abasıyanık
+        </item>
+                             <item>
+“dışınız çok kalabalıktı
+beni içinizdeki zindana attınızdı”
+— Birhan Keskin
+        </item>
+
+                                     <item>
+
+“bilesin, sultan sazlığı’nda boynu eğri bir kuşun
+ince boynuna yediği kurşun gibi hainiz hepimiz.”
+— Birhan Keskin, Soğuk Kazı
+
+        </item>
+                                            <item>
+
+“Sen ölümümdün, seni tutabildim. Her şeyi yitirirken.”
+— Kırmızı Pelerinli Kent - Aslı Erdoğan
+
+        </item>
+        <item>
+
+Uzun kanatlı kuş sürüleri diliyorum sana,
+Ve severken seni,
+Sevdikçe seni,
+Hep çocuk kalacağım, biliyorum.
+
+Akgün Akova
+        </item>
+          <item>
+parmakların ardında her gün doğumunda
+bir çocuğun gözleri gülümser yüzüme
+şen bir şarkıya başladığımda
+gelir bana dudaklarında buseyle
+
+Füruğ Ferruhzad
+
+        </item>
+          <item>
+senin geçmişin uzun, elini hemen elime ver geç kalma
+çoktan beri beklediğin o diri gülümseyiş işte bendim.
+
+Turgut Uyar
+
+        </item>
+          <item>
+Hayal evim, arzu çanım, kirpik boncuğum
+
+Uyudum, sen oldum, soyundum dünyayı.
+
+Şükrü Erbaş - Bağbozumu Şarkıları
+
+        </item>
+          <item>
+“Bildiğim bir şey varsa, gökyüzündeki bir kuşu köşeye sıkıştıramazsın.”
+— Murat Menteş
+
+        </item>
+          <item>
+
+“o içten gülüşünü
+bir gün dudağından çalıp
+gözlerinin önünde
+yüreğimin ortasına koyup,öpeceğim..”
+— Ahmet Telli
+
+
+        </item>
+          <item>
+Mutlu an biraz uzun olmasın
+
+Yoksulluk gibi gideceğim bir yer var
+
+Efkarın aşılmaz yalnızlığın kaçınılmaz olduğu
+
+Cahit Zarifoğlu
+
+        </item>
+          <item>
+
+Onlar
+Yalınkat adamlar kalabalık adamlar
+En yalnız kadınlara söz arasında
+Ya da boş gözleriyle aralıksız
+En kötü sevgilerini sunuyorlar
+
+Gülten Akın
+        </item>
+          <item>
+“Bütün o yolları düşünmek
+Çıldırtmasın seni
+Çelişik sev”
+— Oktay Rıfat
+
+        </item>
+          <item>
+“Bedenini bir dünya haritası gibi dizlerime
+Serip de yollar aradım yürümek için”
+— Ahmet Erhan
+
+        </item>
+          <item>
+
+“yalnız hep çiçeklerle süslü başın
+ben gidince her yanım sen kokacaksın”
+— Suat Vardal
+        </item>
+          <item>
+“Evim yok benim. Düşkününüm, yolum olur musun?”
+— Umay Umay
+
+        </item>
+           <item>
+
+https://www.youtube.com/watch?v=WWPPdBRCXrs
+
+        </item>
+                   <item>
+https://www.youtube.com/watch?v=FbjxsHsi2ks
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=u7maOTaI5vI
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=eB_5g33KCEE
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=RmzPIDTdEdw
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=v9OhV7MXlgk
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=1m71Zgek9tY
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=yDlwD2TJsUw
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=QJ_HX8t9YXI
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=dGL-2tAXFpI
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=_70DqRgm8O0
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=REG07a7p7h4
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=wcuw_3DRlUs
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=mYVckxZVI_g
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=BsAwmcOOuUs
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=WuTsbwIvmvE
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=eB_5g33KCEE
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=DFxIertsRIs
+        </item>
+                          <item>
+https://www.youtube.com/watch?v=eglGN7W4ukU
+        </item>
+     <item>
+
+         Ölüm toplasa da çiçekleri
+Çiçekte tohum biter mi?﻿</item>
+
+
+    </string-array>
+
+
+</resources>

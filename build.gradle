@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url 'http://dl.bintray.com/populov/maven' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.jimdo.gradle:gradle-apt-plugin:0.2-SNAPSHOT'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "http://dl.bintray.com/populov/maven" }
+        maven {
+            url "http://www.bugsense.com/gradle/"
+        }
+        mavenCentral()
+    }
+}

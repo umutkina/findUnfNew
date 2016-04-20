@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context="com.umutkina.findunfollowersapp.UnfListActivity">
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:background="#26517C"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+
+        android:text="@string/mention_users"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/rl_mention"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+
+        android:layout_below="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+
+            android:id="@+id/rl_tv_et"
+            android:layout_toLeftOf="@+id/tv_save_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:padding="8dp"
+                android:background="@color/Gray"
+                android:visibility="gone"
+                android:textColor="@color/White"
+                android:id="@+id/tv_mention"
+                android:minLines="4"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <EditText
+
+                
+                android:hint="@string/mention_hint"
+                android:padding="8dp"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:gravity="start"
+
+                android:id="@+id/et_mention"
+                android:maxLength="140"
+                android:layout_width="match_parent"
+                android:layout_height="140dp" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:background="@color/pso_yellow"
+            android:id="@+id/tv_save_edit"
+            android:layout_margin="8dp"
+            android:text="Save"
+            android:textColor="@color/White"
+            android:layout_alignBottom="@+id/rl_tv_et"
+            android:layout_alignParentRight="true"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ListView
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/rl_mention"
+        android:id="@+id/lv_more"
+        android:layout_above="@+id/tv_more"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+    <TextView
+        android:id="@+id/tv_more"
+        android:layout_width="match_parent"
+        android:padding="12dp"
+        android:text="@string/more"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_above="@+id/adView"
+        android:background="#4099FF"
+        android:gravity="center"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+</RelativeLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_user_image"
+        android:layout_margin="8dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ll_buttons"
+        android:id="@+id/tv_user_name"
+        android:layout_toRightOf="@+id/iv_user_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:id="@+id/ll_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="12dp"
+            android:background="#239923"
+
+            android:text="@string/follow"
+            android:id="@+id/tv_user_followback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="12dp"
+            android:background="#AA5534"
+            android:visibility="gone"
+            android:text="Spam"
+            android:id="@+id/tv_user_spam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</RelativeLayout>
