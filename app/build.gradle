@@ -6,7 +6,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.umutkina.findunfollowersapp"
+        applicationId "com.umutkina.findunfollowersnotweet"
         minSdkVersion 9
         targetSdkVersion 21
         versionCode 19

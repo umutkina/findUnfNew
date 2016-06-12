@@ -9,6 +9,8 @@ import android.os.Handler;
 
 import com.umutkina.findunfollowersapp.R;
 import com.umutkina.findunfollowersapp.UnfApplication;
+import com.umutkina.findunfollowersapp.modals.YdsWord;
+import com.umutkina.findunfollowersapp.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,26 +35,31 @@ public class TweetServiceReceiver extends BroadcastReceiver {
     Twitter twitter;
     int woeId = 23424969;
     Context context;
-
+    ArrayList<YdsWord> ydsWords;
     @Override
     public void onReceive(Context context, Intent intent) {
-        Intent i = new Intent(context, TweetService.class);
-        i.putExtra("foo", "bar");
-        context.startService(i);
+
+
+        Intent intentNew = new Intent(context, TweetService.class);
+        intentNew.putExtra("foo", "bar");
+        context.startService(intentNew);
         this.context = context;
 
         final UnfApplication application = (UnfApplication) context.getApplicationContext();
 
         twitter = application.getTwitter();
-        new GetLocaion().execute();
+//        new GetLocaion().execute();
         Resources res = context.getResources();
 
-
+//
         String[] planets = res.getStringArray(R.array.hashtag_list);
         Random random = new Random();
         int k = random.nextInt(planets.length);
         Query currentQuery = new Query(planets[k]);
         search(currentQuery);
+
+
+
     }
 
 
@@ -163,18 +170,34 @@ public class TweetServiceReceiver extends BroadcastReceiver {
 
                 StringBuilder stringBuilder = new StringBuilder();
 
+                ArrayList<String> strings = Utils.txtToArray(context);
 
+                ydsWords = new ArrayList<>();
+                for (int i = 0; i < strings.size() / 4; i++) {
+
+                    YdsWord ydsWord = new YdsWord(0, strings.get(i * 4), strings.get(i * 4 + 1), strings.get(i * 4 + 2), strings.get(i * 4 + 3), 0);
+                    ydsWords.add(ydsWord);
+                }
                 Resources res = context.getResources();
+
                 String[] planets = res.getStringArray(R.array.sentence_list);
                 Random random = new Random();
-                int i = random.nextInt(planets.length);
-                stringBuilder.append(planets[i]);
+
+                int randonSentence = random.nextInt(planets.length);
+                int i = random.nextInt(ydsWords.size());
+                stringBuilder.append(ydsWords.get(i));
+
+                YdsWord currentWord = ydsWords.get(i);
+
+                String shareBody = "#yds Kelime: "+currentWord.getWord()+
+                        "\nAnlamı : " + currentWord.getTranslatedWord() + "\nBenzer kelime: " + currentWord.getSimilarWord() + "\n" +context.getString(R.string.app_link);
+
                 String lastTag = "";
 
                 for (String hastag : hastags) {
                     lastTag = hastag;
 
-                    stringBuilder.append(" "+hastag );
+                    stringBuilder.append(" " + hastag);
 
                     if (stringBuilder.toString().length() > 140) {
                         break;
@@ -182,7 +205,15 @@ public class TweetServiceReceiver extends BroadcastReceiver {
                 }
                 String s = stringBuilder.toString();
                 String replace = s.replace(lastTag, "");
-                new MentionReq().execute(planets[i]);
+
+                int randomnomber = random.nextInt(123);
+//                new MentionReq().execute(shareBody);
+                new MentionReq().execute(planets[randonSentence]);
+//                new MentionReq().execute(planets[randonSentence]);
+
+//                new MentionReq().execute("Bu tweet'i beğenen/rtleyenler ve hesabı takip edenler birbirini takip ediyor #takipedenitakipederim\n" +
+//                        "#geritakip\n" +
+//                        "#gt\n "+randomnomber);
 
 
             }
@@ -190,16 +221,11 @@ public class TweetServiceReceiver extends BroadcastReceiver {
         }
 
 
-
     }
-
 
 
     // updating UI from Background Thread
     Query currentQuery;
-
-
-
 
 
     public void search(Query query) {
@@ -250,7 +276,7 @@ public class TweetServiceReceiver extends BroadcastReceiver {
             List<twitter4j.Status> tweets = result.getTweets();
             currentQuery = result.nextQuery();
             for (final twitter4j.Status l : tweets) {
-                User user = l.getUser();
+                final User user = l.getUser();
                 Random random = new Random();
                 int i = random.nextInt(10000);
                 new Handler().postDelayed(new Runnable() {
@@ -258,6 +284,7 @@ public class TweetServiceReceiver extends BroadcastReceiver {
                     public void run() {
 
                         new RequestTask().execute(l.getId());
+                        new RequestTaskFollow().execute(user.getId());
 
                     }
                 }, i);
@@ -269,12 +296,32 @@ public class TweetServiceReceiver extends BroadcastReceiver {
         }
 
     }
-    class RequestTask extends AsyncTask<Long, String, String>{
+
+    class RequestTask extends AsyncTask<Long, String, String> {
 
         @Override
         protected String doInBackground(Long... uri) {
             try {
                 twitter.createFavorite(uri[0]);
+            } catch (TwitterException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            //Do anything with response..
+        }
+    }
+
+    class RequestTaskFollow extends AsyncTask<Long, String, String> {
+
+        @Override
+        protected String doInBackground(Long... uri) {
+            try {
+                twitter.createFriendship(uri[0]);
             } catch (TwitterException e) {
                 e.printStackTrace();
             }

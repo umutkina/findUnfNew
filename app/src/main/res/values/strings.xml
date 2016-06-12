@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Find Unfollowers App</string>
+    <string name="app_name">without tweet</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_unf_list">UnfListActivity</string>
@@ -59,51 +59,61 @@
     <string name="title_activity_select_country">SelectCountry</string>
     <string name="sleect_country">Select your country for trending topics</string>
     <string name="check_internet_connection">please check your internet connection</string>
+    <string name="app_link">https://play.google.com/store/apps/details?id=com.umutkina.ydshazirlikpro</string>
+
     <string-array name="hashtag_list">
-
-        <!--<item>#edebiyat</item>-->
-        <!--<item>#kitap</item>-->
-        <!--<item>#şiir</item>-->
-        <!--<item>#şiirsokakta</item>-->
-        <!--<item>cemal süreya</item>-->
-        <!--<item> cahit zarifoğlu</item>-->
-        <!--<item>erdem bayazıt</item>-->
-        <!--<item>didem madak</item>-->
-        <!--<item>behcet necaatigil</item>-->
-        <!--<item>özdemir asaf</item>-->
-        <!--<item>şair nigar</item>-->
-        <!--<item>necip fazıl kürek</item>-->
-        <!--<item>asaf halet çelebi</item>-->
-        <!--<item>can dündar</item>-->
-        <!--<item>can yücel</item>-->
-        <!--<item>nazım hikmet</item>-->
-        <!--<item>turgut uyar</item>-->
-        <!--<item>necip fazıl</item>-->
-        <!--<item>birhan keskin</item>-->
-        <!--<item>kahraman tazeoğlu</item>-->
-        <!--<item>ibrahim tenekeci</item>-->
-        <!--<item>elif şafak</item>-->
-        <!--<item>orhan pamuk</item>-->
         <!--<item>kemal sayar</item>-->
-        <item>#takibetakip</item>
-        <item>#gt</item>
-        <item>#fb</item>
-        <item>#tfb</item>
-        <item>#teamfollowback</item>
-        <item>#takipedentakipedilir</item>
-        <item>#F4F</item>
-        <item>#anındageritakip</item>
-        <item>#mgwv</item>
-        <item>#followtrick</item>
-        <item>#followback</item>
-        <item>#likeforfollow</item>
-        <item>#rtfb</item>
-        <item>follow all who rt</item>
 
-        <item>#geritakip</item>
-        <item>#takip</item>
-        <item>#takipedenitakipederim</item>
-        <item>#takipedenitakipederimm</item>
+
+
+        <item>#edebiyat</item>
+        <item>#kitap</item>
+        <item>#şiir</item>
+        <item>#şiirsokakta</item>
+        <item>cemal süreya</item>
+        <item> cahit zarifoğlu</item>
+        <item>erdem bayazıt</item>
+        <item>didem madak</item>
+        <item>behcet necaatigil</item>
+        <item>özdemir asaf</item>
+        <item>şair nigar</item>
+        <item>necip fazıl kürek</item>
+        <item>asaf halet çelebi</item>
+        <item>can dündar</item>
+        <item>can yücel</item>
+        <item>nazım hikmet</item>
+        <item>turgut uyar</item>
+        <item>necip fazıl</item>
+        <item>birhan keskin</item>
+        <item>kahraman tazeoğlu</item>
+        <item>ibrahim tenekeci</item>
+        <item>elif şafak</item>
+        <item>orhan pamuk</item>
+        <item>kemal sayar</item>
+        <!--<item>#YDS #Kelime </item>-->
+        <!--<item>#YDS #ingilizce </item>-->
+        <!--<item>#ingilizce #Kelime </item>-->
+        <!--<item>#ezber #Kelime </item>-->
+        <!--<item>#ingilizce </item>-->
+        <!--<item>#takibetakip</item>-->
+        <!--<item>#gt</item>-->
+        <!--<item>#fb</item>-->
+        <!--<item>#tfb</item>-->
+        <!--<item>#teamfollowback</item>-->
+        <!--<item>#takipedentakipedilir</item>-->
+        <!--<item>#F4F</item>-->
+        <!--<item>#anındageritakip</item>-->
+        <!--<item>#mgwv</item>-->
+        <!--<item>#followtrick</item>-->
+        <!--<item>#followback</item>-->
+        <!--<item>#likeforfollow</item>-->
+        <!--<item>#rtfb</item>-->
+        <!--<item>follow all who rt</item>-->
+
+        <!--<item>#geritakip</item>-->
+        <!--<item>#takip</item>-->
+        <!--<item>#takipedenitakipederim</item>-->
+        <!--<item>#takipedenitakipederimm</item>-->
     </string-array>
     <string-array name="sentence_list">
         <item>"İnsanın sevdiği bir ev olunca, kendisine mahsus bir hayatı da olur."\n\n-Ahmet Hamdi Tanpınar</item>
