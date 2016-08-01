@@ -3,12 +3,19 @@ package com.umutkina.findunfollowersapp.services;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Handler;
 
 import com.umutkina.findunfollowersapp.R;
 import com.umutkina.findunfollowersapp.UnfApplication;
+import com.umutkina.findunfollowersapp.modals.Const;
+import com.umutkina.findunfollowersapp.modals.HashTag;
+import com.umutkina.findunfollowersapp.modals.HashTagListWraper;
+import com.umutkina.findunfollowersapp.modals.TweetItem;
+import com.umutkina.findunfollowersapp.modals.TweetList;
+import com.umutkina.findunfollowersapp.modals.TweetListWrapper;
 import com.umutkina.findunfollowersapp.modals.YdsWord;
 import com.umutkina.findunfollowersapp.utils.Utils;
 
@@ -36,6 +43,7 @@ public class TweetServiceReceiver extends BroadcastReceiver {
     int woeId = 23424969;
     Context context;
     ArrayList<YdsWord> ydsWords;
+    HashTagListWraper hashTagListWraper;
     @Override
     public void onReceive(Context context, Intent intent) {
 
@@ -46,17 +54,48 @@ public class TweetServiceReceiver extends BroadcastReceiver {
         this.context = context;
 
         final UnfApplication application = (UnfApplication) context.getApplicationContext();
-
         twitter = application.getTwitter();
-//        new GetLocaion().execute();
-        Resources res = context.getResources();
+        SharedPreferences sharedPreferences = application.getmSharedPreferences();
+        String string = sharedPreferences.getString(Const.TWEET_LIST, null);
+        TweetListWrapper tweetListWrapper = (TweetListWrapper) Utils.getObject(string, TweetListWrapper.class);
+
+        String hashTagJson=sharedPreferences.getString(Const.HASH_TAG_LIST,null );
+
+        hashTagListWraper = (HashTagListWraper) Utils.getObject(string, HashTagListWraper.class);
+
+        if (hashTagListWraper != null) {
+//            Resources res = context.getResources();
 
 //
-        String[] planets = res.getStringArray(R.array.hashtag_list);
-        Random random = new Random();
-        int k = random.nextInt(planets.length);
-        Query currentQuery = new Query(planets[k]);
-        search(currentQuery);
+//            String[] planets = res.getStringArray(R.array.hashtag_list);
+            Random random = new Random();
+
+            ArrayList<HashTag> hashTagArrayList = hashTagListWraper.getHashTagArrayList();
+            int k = random.nextInt(hashTagArrayList.size());
+            Query currentQuery = new Query(hashTagArrayList.get(k).getHashTag());
+            search(currentQuery);
+        }
+        if (tweetListWrapper != null) {
+            String name = sharedPreferences.getString(Const.SELECTED_TWEET_NAME, null);
+            ArrayList<TweetList> tweetLists = tweetListWrapper.getTweetLists();
+            TweetList currentTwetList = null;
+            for (TweetList tweetList : tweetLists) {
+                if (tweetList.getName().equalsIgnoreCase(name)) {
+                    currentTwetList = tweetList;
+                    break;
+                }
+            }
+            Random random = new Random();
+            ArrayList<TweetItem> tweetItems = currentTwetList.getTweetItems();
+            int randonSentence = random.nextInt(tweetItems.size());
+
+            new MentionReq().execute(tweetItems.get(randonSentence).getTweet());
+
+        }
+//
+
+//        new GetLocaion().execute();
+
 
 
 

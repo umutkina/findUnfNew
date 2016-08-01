@@ -36,6 +36,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import twitter4j.IDs;
 import twitter4j.RateLimitStatus;
 import twitter4j.ResponseList;
@@ -120,6 +121,8 @@ public class VenueDetailForPunchActivity extends BaseActivity {
     TextView tvUnfollowingMention;
     @InjectView(R.id.tv_direct_message)
     TextView tvDirectMessage;
+    @InjectView(R.id.tv_tweet_list)
+    TextView tvTweetList;
 
     private Uri uri;
     private long followerId = -1;
@@ -145,7 +148,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
         if (!instashare) {
             showInstashareDialog();
         }
-        mSharedPreferences.edit().putBoolean("instashare",true).commit();
+        mSharedPreferences.edit().putBoolean("instashare", true).commit();
 
         AdRequest adRequest = new AdRequest.Builder().build();
 
@@ -230,8 +233,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
                         loginToTwitter();
 
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.shoult_login), Toast.LENGTH_SHORT).show();
-                    }
-                  else  if (splittedMentionFollowingUserIds.size() == 0) {
+                    } else if (splittedMentionFollowingUserIds.size() == 0) {
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.no_following), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -270,8 +272,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
                         loginToTwitter();
 
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.shoult_login), Toast.LENGTH_SHORT).show();
-                    }
-                  else  if (splittedMentionFollowingUserIds.size() == 0) {
+                    } else if (splittedMentionFollowingUserIds.size() == 0) {
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.no_following), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -291,8 +292,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
                         loginToTwitter();
 
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.shoult_login), Toast.LENGTH_SHORT).show();
-                    }
-                   else if (splittedUserIds.size() == 0) {
+                    } else if (splittedUserIds.size() == 0) {
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.no_unfollowers), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -312,8 +312,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
                         loginToTwitter();
 
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.shoult_login), Toast.LENGTH_SHORT).show();
-                    }
-                  else  if (splittedFBUserIds.size() == 0) {
+                    } else if (splittedFBUserIds.size() == 0) {
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.no_following), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -333,8 +332,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
                         loginToTwitter();
 
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.shoult_login), Toast.LENGTH_SHORT).show();
-                    }
-                 else   if (splittedMentionFollowerUserIds.size() == 0) {
+                    } else if (splittedMentionFollowerUserIds.size() == 0) {
                         Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.no_following), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -468,7 +466,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
     }
 
     public boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager
                 .getActiveNetworkInfo();
         return activeNetworkInfo != null;
@@ -497,10 +495,9 @@ public class VenueDetailForPunchActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         if (!isNetworkAvailable()) {
-            Utils.showInfoDialog(getContext(),null,getString(R.string.warning),getString(R.string.check_internet_connection));
+            Utils.showInfoDialog(getContext(), null, getString(R.string.warning), getString(R.string.check_internet_connection));
 
-        }
-        else{
+        } else {
             if (isTwitterLoggedInAlready()) {
                 if (isLoginBefore) {
 
@@ -527,7 +524,6 @@ public class VenueDetailForPunchActivity extends BaseActivity {
 
             }
         }
-
 
 
     }
@@ -672,11 +668,9 @@ public class VenueDetailForPunchActivity extends BaseActivity {
                         WebViewActivity.class);
                 intent.putExtra("url", authenticationUrl);
                 startActivityForResult(intent, 1);
+            } else {
+                Utils.showInfoDialog(getContext(), null, getString(R.string.warning), getString(R.string.check_internet_connection));
             }
-            else{
-                Utils.showInfoDialog(getContext(),null,getString(R.string.warning),getString(R.string.check_internet_connection));
-            }
-
 
 
             // VenueDetailForPunchActivity.this.startActivity(new Intent(
@@ -757,7 +751,7 @@ public class VenueDetailForPunchActivity extends BaseActivity {
             tvStartFinding.setText(getString(R.string.logout));
             tvStartFinding.setBackgroundColor(getResources().getColor(R.color.red_tatli_dk));
             getFolowerList(userID);
-            sendLocation();
+
             // try {
             //
             // // id = twitter.getId();
@@ -1162,6 +1156,33 @@ public class VenueDetailForPunchActivity extends BaseActivity {
 
         }
     };
+
+    @OnClick(R.id.tv_tweet_list)
+    public void tweetList() {
+        startActivity(new Intent(getContext(),TweetListActivity.class));
+    }
+    @OnClick(R.id.tv_hashtag_add)
+    public void hashTagAdd() {
+        startActivity(new Intent(getContext(),HashTagAddActivity.class));
+    }
+
+    @OnClick(R.id.tv_start_tweet)
+    public void startTweet() {
+
+        if (splittedUserIds != null && splittedUserIds.size() > 0) {
+
+            sendLocation();
+        } else {
+            if (splittedUserIds == null) {
+                loginToTwitter();
+
+                Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.shoult_login), Toast.LENGTH_SHORT).show();
+            } else if (splittedUserIds.size() == 0) {
+                Toast.makeText(VenueDetailForPunchActivity.this, getString(R.string.no_unfollowers), Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
 
     AdListener adListener2 = new AdListener() {
         @Override

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">without tweet</string>
+    <string name="app_name">Tweet List</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_unf_list">UnfListActivity</string>
@@ -63,7 +63,6 @@
 
     <string-array name="hashtag_list">
         <!--<item>kemal sayar</item>-->
-
 
 
         <item>#edebiyat</item>

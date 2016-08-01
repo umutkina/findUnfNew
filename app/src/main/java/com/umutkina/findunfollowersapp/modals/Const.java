@@ -16,4 +16,9 @@ public class Const {
 
     // Twitter oauth urls
     public static final String URL_TWITTER_OAUTH_VERIFIER = "oauth_verifier";
+
+    public static final String TWEET_LIST = "tweetList";
+    public static final String SELECTED_TWEET_NAME = "selectedTweetName";
+    public static final String HASH_TAG_LIST = "hashTagList";
+
 }
