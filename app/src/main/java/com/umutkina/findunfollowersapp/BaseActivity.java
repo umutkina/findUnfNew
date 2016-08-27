@@ -31,6 +31,11 @@ public class BaseActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        long l = System.currentTimeMillis();
+
+
+
         unfApplication = (UnfApplication) getApplication();
         if (savedInstanceState != null) {
             user = (User) savedInstanceState.getSerializable("user");

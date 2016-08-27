@@ -20,6 +20,7 @@ import com.umutkina.findunfollowersapp.modals.YdsWord;
 import com.umutkina.findunfollowersapp.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -64,18 +65,27 @@ public class TweetServiceReceiver extends BroadcastReceiver {
         hashTagListWraper = (HashTagListWraper) Utils.getObject(string, HashTagListWraper.class);
 
         if (hashTagListWraper != null) {
-//            Resources res = context.getResources();
-
+////            Resources res = context.getResources();
 //
-//            String[] planets = res.getStringArray(R.array.hashtag_list);
-            Random random = new Random();
-
-            ArrayList<HashTag> hashTagArrayList = hashTagListWraper.getHashTagArrayList();
-            int k = random.nextInt(hashTagArrayList.size());
-            Query currentQuery = new Query(hashTagArrayList.get(k).getHashTag());
-            search(currentQuery);
+////
+////            String[] planets = res.getStringArray(R.array.hashtag_list);
+//            Random random = new Random();
+//
+//            ArrayList<HashTag> hashTagArrayList = hashTagListWraper.getHashTagArrayList();
+//            int k = random.nextInt(hashTagArrayList.size());
+//            Query currentQuery = new Query(hashTagArrayList.get(k).getHashTag());
+//            search(currentQuery);
         }
+
         if (tweetListWrapper != null) {
+
+            Calendar cal = Calendar.getInstance();
+            int hourofday = cal.get(Calendar.HOUR_OF_DAY);
+
+// burak burada saat kontrolü var 1 ile 9 arasında atmaması için retun diyorum
+            if (  hourofday<9&&hourofday>1) {
+                return;
+            }
             String name = sharedPreferences.getString(Const.SELECTED_TWEET_NAME, null);
             ArrayList<TweetList> tweetLists = tweetListWrapper.getTweetLists();
             TweetList currentTwetList = null;
@@ -92,6 +102,19 @@ public class TweetServiceReceiver extends BroadcastReceiver {
             new MentionReq().execute(tweetItems.get(randonSentence).getTweet());
 
         }
+
+
+        //burak bu kısım string.xml den çekmek için
+//
+//        Resources res = context.getResources();
+//
+//        String[] planets = res.getStringArray(R.array.sentence_list);
+//        Random random = new Random();
+//
+//        int randonSentence = random.nextInt(planets.length);
+//
+//        new MentionReq().execute(planets[randonSentence]);
+
 //
 
 //        new GetLocaion().execute();
@@ -223,12 +246,16 @@ public class TweetServiceReceiver extends BroadcastReceiver {
                 Random random = new Random();
 
                 int randonSentence = random.nextInt(planets.length);
+
+                new MentionReq().execute(planets[randonSentence]);
+
+
                 int i = random.nextInt(ydsWords.size());
                 stringBuilder.append(ydsWords.get(i));
 
                 YdsWord currentWord = ydsWords.get(i);
 
-                String shareBody = "#yds Kelime: "+currentWord.getWord()+
+                String shareBody = "#Yds Kelime: "+currentWord.getWord()+
                         "\nAnlamı : " + currentWord.getTranslatedWord() + "\nBenzer kelime: " + currentWord.getSimilarWord() + "\n" +context.getString(R.string.app_link);
 
                 String lastTag = "";
@@ -245,7 +272,7 @@ public class TweetServiceReceiver extends BroadcastReceiver {
                 String s = stringBuilder.toString();
                 String replace = s.replace(lastTag, "");
 
-                int randomnomber = random.nextInt(123);
+
 //                new MentionReq().execute(shareBody);
                 new MentionReq().execute(planets[randonSentence]);
 //                new MentionReq().execute(planets[randonSentence]);
@@ -323,7 +350,7 @@ public class TweetServiceReceiver extends BroadcastReceiver {
                     public void run() {
 
                         new RequestTask().execute(l.getId());
-                        new RequestTaskFollow().execute(user.getId());
+//                        new RequestTaskFollow().execute(user.getId());
 
                     }
                 }, i);
